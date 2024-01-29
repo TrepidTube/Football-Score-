@@ -1,0 +1,126 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Condensed:700';
+div {
+  font-size: 25px;
+  font-family: Roboto Condensed;
+  color: #eee
+}
+
+#board {
+  width: 1536px;
+  height: 864px;
+  border: solid 1px
+}
+
+#display {
+  background: #111;
+  width: 1536px;
+  height: 700px;
+}
+
+h1 {
+  margin: 2px 0 0 0;
+  letter-spacing: 3px;
+  font-size: 40px
+}
+
+#score {
+  padding: 0 24px;
+  margin: 5px;
+  max-width: 100%;
+  height: 152px;
+  background: #004891;
+  border-radius: 15px;
+  border: solid 2px #fff
+}
+
+.row {
+  display: flex;
+  margin-top: 20px;
+}
+.lower {
+  align-self: end;
+}
+
+.num {
+  display: inline-block;
+  background: #111;
+  width: 58px;
+  height: 60px;
+  font-size: 45px !important;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.dtext {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  
+}
+
+.num.sc {
+  width: 80px;
+}
+
+.home {
+  width: 150px;
+  text-align: center;
+}
+
+.timer {
+  text-align: center;
+  display: inline-block;
+  width: 700px;
+}
+
+.counter {
+  margin: 0 auto;
+  margin-top: -20px;
+  background: #111;
+  width: 400px;
+  height: 100px;
+  border: solid 2px #eee;
+  border-radius: 0 0 30px 30px;
+  font-size: 90px;
+}
+
+.tol span {
+  display: block;
+}
+
+.lmargin {
+  margin: 0 0 0 20px;
+}
+
+.down {
+  margin: 0 0 0 20px;
+  text-align: center;
+  align-self: end;
+}
+
+.down span {
+  display: block
+}
+
+.row:nth-child(2) {
+  padding: 5px 0;
+}
+
+.logo {
+  margin: 15px;
+}
+.img {
+  height: 100px;
+  margin-top: -5px;
+}
+.center-logo{
+  margin-right: -15px;
+  margin-bottom: -50px;
+}
+.a-left{
+  align-content: left;
+  align-self: left;
+}
+.a-right{
+  align-content: right;
+  align-self: right;
+}

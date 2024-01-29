@@ -1,0 +1,79 @@
+<mat-card FadeInDown>
+  <form (ngSubmit)="updateScore(_sc)">
+    <h2 color="primary">
+      MARCADOR
+    </h2>
+    <mat-form-field class="w-50">
+      <input matInput type="tel" placeholder="SERVIDOR" [(ngModel)]="_sc.url" name="url">
+    </mat-form-field>
+    <div class="w-50">
+      <input id="upFile" type="file" style="display:none" #upFile (change)="upImg($event)">
+      <button mat-button color="primary" type="button" (click)="upFile.click()">CARGAR IMAGEN</button>
+    </div>
+    <hr>
+    <div class="w-50">
+      <select [(ngModel)]="_sc.team" name="team">
+        <option value="home">HOME</option>
+        <option value="guest">GUEST</option>
+      </select>
+    </div>
+    <mat-form-field class="w-50">
+      <input matInput type="number" color="primary" placeholder="HOME" min="0" max="99" [(ngModel)]="_sc.homeScore" name="home">
+    </mat-form-field>
+    <mat-form-field class="w-50">
+      <input matInput type="number" color="primary" placeholder="GUEST" min="0" max="99" [(ngModel)]="_sc.guestScore" name="guest">
+    </mat-form-field>
+    <mat-form-field class="w-50">
+      <input matInput type="number" color="primary" placeholder="T. O. L." min="1" max="3" [(ngModel)]="_sc.homeTOL" name="homeTOL">
+    </mat-form-field>
+    <mat-form-field class="w-50">
+      <input matInput type="number" color="primary" placeholder="T. O. L." min="1" max="3" [(ngModel)]="_sc.guestTOL" name="guestTOL">
+    </mat-form-field>
+    <mat-form-field class="w-25">
+      <input matInput type="number" color="primary" placeholder="DOWN" min="1" max="4" [(ngModel)]="_sc.down" name="down">
+    </mat-form-field>
+    <mat-form-field class="w-25">
+      <input matInput type="number" color="primary" placeholder="TO GO" min="0" max="99" [(ngModel)]="_sc.toGo" name="toGo">
+    </mat-form-field>
+    <mat-form-field class="w-25">
+      <input matInput type="number" color="primary" placeholder="BALL ON" min="0" max="50" [(ngModel)]="_sc.ballOn" name="ballOn">
+    </mat-form-field>
+    <mat-form-field class="w-25">
+      <input matInput type="number" color="primary" placeholder="QTR" min="1" max="4" [(ngModel)]="_sc.qtr" name="qtr">
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary">
+      ACTUALIZAR
+    </button>
+  </form>
+
+  <div>
+    <h2>
+      CRONÓMETRO
+    </h2>
+    <mat-form-field>
+      <input matInput type="tel" color="primary" placeholder="minutos:segundos" [(ngModel)]="_cn.timeOut" name="time" (change)="_cn.initClock()">
+    </mat-form-field>
+    <button mat-stroked-button color="primary" (click)="_cn.run()">
+      <mat-icon>play_arrow</mat-icon>
+    </button>
+    <button mat-stroked-button color="primary" (click)="_cn.pause()">
+      <mat-icon>pause</mat-icon>
+    </button>
+    <button mat-stroked-button color="primary" (dblclick)="_cn.stop()">
+      <mat-icon>stop</mat-icon>
+    </button>
+  </div>
+</mat-card>
+
+<div class="init fadeInDown" *ngIf="_imgString.dataUrl">
+  <mat-card>
+  <img mat-card-image [src]="_imgString.dataUrl">
+  <mat-card-content>
+    Esta imagen se ajustará a 1536px x 700px
+  </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="_imgString.dataUrl = null">CANCELAR</button>
+      <button mat-raised-button color="primary" (click)="sendImage(_imgString.dataUrl)">ENVIAR</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
